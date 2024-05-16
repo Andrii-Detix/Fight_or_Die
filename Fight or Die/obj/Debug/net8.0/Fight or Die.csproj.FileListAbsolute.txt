@@ -1,0 +1,14 @@
+D:\Programing\Projects\C#\Fight or Die\Fight or Die\bin\Debug\net8.0\Fight or Die.exe
+D:\Programing\Projects\C#\Fight or Die\Fight or Die\bin\Debug\net8.0\Fight or Die.deps.json
+D:\Programing\Projects\C#\Fight or Die\Fight or Die\bin\Debug\net8.0\Fight or Die.runtimeconfig.json
+D:\Programing\Projects\C#\Fight or Die\Fight or Die\bin\Debug\net8.0\Fight or Die.dll
+D:\Programing\Projects\C#\Fight or Die\Fight or Die\bin\Debug\net8.0\Fight or Die.pdb
+D:\Programing\Projects\C#\Fight or Die\Fight or Die\obj\Debug\net8.0\Fight or Die.GeneratedMSBuildEditorConfig.editorconfig
+D:\Programing\Projects\C#\Fight or Die\Fight or Die\obj\Debug\net8.0\Fight or Die.AssemblyInfoInputs.cache
+D:\Programing\Projects\C#\Fight or Die\Fight or Die\obj\Debug\net8.0\Fight or Die.AssemblyInfo.cs
+D:\Programing\Projects\C#\Fight or Die\Fight or Die\obj\Debug\net8.0\Fight or Die.csproj.CoreCompileInputs.cache
+D:\Programing\Projects\C#\Fight or Die\Fight or Die\obj\Debug\net8.0\Fight or Die.dll
+D:\Programing\Projects\C#\Fight or Die\Fight or Die\obj\Debug\net8.0\refint\Fight or Die.dll
+D:\Programing\Projects\C#\Fight or Die\Fight or Die\obj\Debug\net8.0\Fight or Die.pdb
+D:\Programing\Projects\C#\Fight or Die\Fight or Die\obj\Debug\net8.0\Fight or Die.genruntimeconfig.cache
+D:\Programing\Projects\C#\Fight or Die\Fight or Die\obj\Debug\net8.0\ref\Fight or Die.dll
