@@ -1,4 +1,4 @@
-﻿namespace Fight_or_Die.Model.Health;
+﻿namespace Fight_or_Die.Model.HealthModel;
 
 public class Health
 {
