@@ -1,6 +1,6 @@
 ﻿namespace Fight_or_Die.GeometryElements;
 
-public class Size
+public struct Size
 {
     public Size(int width, int height)
     {

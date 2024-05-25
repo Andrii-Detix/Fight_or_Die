@@ -1,6 +1,6 @@
 ﻿namespace Fight_or_Die.GeometryElements;
 
-public class Vector
+public struct Vector
 {
     public Vector(int x, int y)
     {
