@@ -2,6 +2,6 @@
 
 public interface ITimeListener
 {
-    event Action Ticked;
+    event Action? Ticked;
     void Tick();
 }

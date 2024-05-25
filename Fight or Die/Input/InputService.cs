@@ -9,7 +9,7 @@ public class InputService : AbstractService
         _timeListener = timeListener;
     }
 
-    public event Action<ConsoleKey> KeyPressed;
+    public event Action<ConsoleKey>? KeyPressed;
 
     private readonly ITimeListener _timeListener;
     

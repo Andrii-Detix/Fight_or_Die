@@ -12,8 +12,8 @@ public class Health
     private readonly int _minHealth = 0;
     public int Value { get; private set; }
     
-    public event Action Died;
-    public event Action HealthChanged;
+    public event Action? Died;
+    public event Action? HealthChanged;
 
     public void AddHealth(int points)
     {
