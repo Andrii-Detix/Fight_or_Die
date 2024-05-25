@@ -5,32 +5,34 @@ public class Health
     public Health(int maxHealth)
     {
         _maxHealth = maxHealth;
-        _health = _maxHealth;
+        Value = _maxHealth;
     }
 
     private readonly int _maxHealth;
     private readonly int _minHealth = 0;
-    private int _health;
+    public int Value { get; private set; }
     
     public event Action Died;
     public event Action HealthChanged;
 
     public void AddHealth(int points)
     {
-        if(points == 0)
-            return;
-
-        int newHealth = _health + points;
+        int newHealth = Value + points;
 
         if (newHealth > _maxHealth)
-            _health = _maxHealth;
+            newHealth = _maxHealth;
+        
+        if(newHealth == Value)
+            return;
 
         if (newHealth <= _minHealth)
         {
-            _health = _minHealth;
+            Value = _minHealth;
             Died?.Invoke();
+            return;
         }
-        
+
+        Value = newHealth;
         HealthChanged?.Invoke();
     }
 }
