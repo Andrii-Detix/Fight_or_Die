@@ -1,7 +1,7 @@
 ﻿using Fight_or_Die.Abstractions;
 using Fight_or_Die.Model.HealthModel;
 
-namespace Fight_or_Die.Model.Character;
+namespace Fight_or_Die.Model.CharacterModel;
 
 public class Character : IDamagable
 {
