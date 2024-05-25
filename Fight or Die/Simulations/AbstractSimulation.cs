@@ -16,6 +16,8 @@ public abstract class AbstractSimulation<T> : IEnumerable<T>
         _entities.Remove(entity);
     }
 
+    public int Count => _entities.Count;
+    
     public IEnumerator<T> GetEnumerator() => _entities.GetEnumerator();
 
     IEnumerator IEnumerable.GetEnumerator() => _entities.GetEnumerator();
