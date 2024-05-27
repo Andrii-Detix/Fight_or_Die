@@ -7,11 +7,12 @@ public class ItemsSimulation : AbstractSimulation<Item>
 {
     public event Action<Item>? Start;
     public event Action<Item>? End;
+
     public override void Simulate(Item item)
     {
-        if(_entities.Contains(item))
+        if (_entities.Contains(item))
             return;
-        
+
         OnEnable(item);
         Add(item);
         Start?.Invoke(item);
@@ -24,20 +25,20 @@ public class ItemsSimulation : AbstractSimulation<Item>
             OnDisable(entity);
             End?.Invoke(entity);
         }
-        
+
         _entities.Clear();
     }
 
     protected override void Stop(Item item)
     {
-        if(!_entities.Contains(item))
+        if (!_entities.Contains(item))
             return;
-        
+
         OnDisable(item);
         Remove(item);
         End?.Invoke(item);
     }
-    
+
     private void OnEnable(Item item)
     {
         item.Destroyed += Stop;

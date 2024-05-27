@@ -11,6 +11,6 @@ public class Plate : IPlaced
         Size = size;
     }
 
-    public  Vector Position { get; }
-    public  Size Size { get; }
+    public Vector Position { get; }
+    public Size Size { get; }
 }

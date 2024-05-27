@@ -7,6 +7,7 @@ public struct Size
         Width = width;
         Height = height;
     }
+
     public readonly int Width;
     public readonly int Height;
 }

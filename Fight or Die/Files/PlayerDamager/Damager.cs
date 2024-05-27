@@ -11,7 +11,7 @@ public class Damager
         _player = player;
         _config = config;
     }
-    
+
     private readonly IDamagable _player;
     private readonly DamagerConfig _config;
     private int _damageTimer = 0;
@@ -20,11 +20,12 @@ public class Damager
     {
         MakeDamage();
     }
+
     private void MakeDamage()
     {
         _damageTimer++;
-        
-        if (_damageTimer ==_config.DamageInterval)
+
+        if (_damageTimer == _config.DamageInterval)
         {
             _player.TakeDamage(_config.Damage);
             _damageTimer = 0;

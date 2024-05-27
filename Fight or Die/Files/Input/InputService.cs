@@ -12,7 +12,7 @@ public class InputService : AbstractService
     public event Action<ConsoleKey>? KeyPressed;
 
     private readonly ITimeListener _timeListener;
-    
+
     protected override void OnEnable()
     {
         _timeListener.Ticked += OnTicked;
@@ -25,8 +25,7 @@ public class InputService : AbstractService
 
     private void OnTicked()
     {
-        if(Console.KeyAvailable)
+        if (Console.KeyAvailable)
             KeyPressed?.Invoke(Console.ReadKey(true).Key);
     }
-    
 }

@@ -8,11 +8,11 @@ public class Time : ITime, ITimeListener
     }
 
     public int Frame { get; private set; } = 0;
-    
+
     public event Action? Ticked;
 
     private readonly int _delay;
-    
+
     public void Tick()
     {
         Thread.Sleep(_delay);

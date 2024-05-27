@@ -9,13 +9,13 @@ public class Map : IEnumerable<Plate>
     {
         _plates = plates;
     }
-    
+
     private readonly List<Plate> _plates;
 
     public int Count => _plates.Count;
 
     public Plate this[int i] => _plates[i];
-    
+
     public IEnumerator<Plate> GetEnumerator() => _plates.GetEnumerator();
 
     IEnumerator IEnumerable.GetEnumerator() => _plates.GetEnumerator();

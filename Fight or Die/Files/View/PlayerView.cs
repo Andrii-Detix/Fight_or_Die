@@ -1,4 +1,5 @@
-﻿using Fight_or_Die.Configs;
+﻿using Fight_or_Die.Abstractions;
+using Fight_or_Die.Configs;
 using Fight_or_Die.GeometryElements;
 using Fight_or_Die.Model.CharacterModel;
 
@@ -6,9 +7,10 @@ namespace Fight_or_Die.View;
 
 public class PlayerView : AbstractView
 {
-    public PlayerView(Character player, ConsoleConfig consoleConfig) : base(consoleConfig)
+    public PlayerView(IPlaced player, int health, ConsoleConfig consoleConfig) : base(consoleConfig)
     {
         _player = player;
+        _health = health;
         _texture = new[]
         {
             "<-_->",
@@ -17,7 +19,8 @@ public class PlayerView : AbstractView
         };
     }
 
-    private readonly Character _player;
+    private readonly IPlaced _player;
+    private int _health;
     private readonly string[] _texture;
 
 
@@ -27,6 +30,10 @@ public class PlayerView : AbstractView
         DrawHealth();
     }
 
+    public void OnHealthChanged(int health)
+    {
+        _health = health;
+    }
 
     private void DrawPlayer()
     {
@@ -35,8 +42,8 @@ public class PlayerView : AbstractView
 
     private void DrawHealth()
     {
-        Vector position = new Vector(_consoleConfig.maxUserX, _consoleConfig.minUserY);
+        Vector position = new Vector(_consoleConfig.minUserX, _consoleConfig.minUserY);
         SetCursor(position);
-        Console.WriteLine($"Health: {_player.Health.Value}");
+        Console.WriteLine($"Health: {_health}");
     }
 }

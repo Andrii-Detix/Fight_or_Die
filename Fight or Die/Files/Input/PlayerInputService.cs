@@ -12,7 +12,7 @@ public class PlayerInputService : AbstractService
 
     public void AddAction(ConsoleKey key, Action action)
     {
-        if(!_actions.ContainsKey(key))
+        if (!_actions.ContainsKey(key))
             _actions.Add(key, action);
     }
 
@@ -24,9 +24,10 @@ public class PlayerInputService : AbstractService
 
     private void OnKeyPressed(ConsoleKey key)
     {
-        if(_actions.ContainsKey(key))
+        if (_actions.ContainsKey(key))
             _actions[key].Invoke();
     }
+
     protected override void OnEnable()
     {
         _inputService.KeyPressed += OnKeyPressed;

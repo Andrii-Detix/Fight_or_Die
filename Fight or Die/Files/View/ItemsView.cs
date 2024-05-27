@@ -1,13 +1,14 @@
 ﻿using Fight_or_Die.Abstractions;
 using Fight_or_Die.Configs;
+using Fight_or_Die.Model.Items;
 
 namespace Fight_or_Die.View;
 
 public class ItemsView : AbstractView
 {
-    public ItemsView(List<IPlaced> items, ConsoleConfig consoleConfig) : base(consoleConfig)
+    public ItemsView(ConsoleConfig consoleConfig) : base(consoleConfig)
     {
-        items = items;
+        _items = new List<IPlaced>();
         _texture = new[]
         {
             "##",
@@ -24,6 +25,16 @@ public class ItemsView : AbstractView
         DrawItems();
     }
 
+    public void AddItem(IPlaced item)
+    {
+        _items.Add(item);
+    }
+
+    public void RemoveItem(IPlaced item)
+    {
+        _items.Remove(item);
+    }
+
     private void DrawItems()
     {
         foreach (var item in _items)
@@ -31,5 +42,4 @@ public class ItemsView : AbstractView
             DrawStrings(item.Position, _texture);
         }
     }
-    
 }

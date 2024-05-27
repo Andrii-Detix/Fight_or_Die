@@ -1,4 +1,5 @@
-﻿using Fight_or_Die.Configs;
+﻿using Fight_or_Die.Abstractions;
+using Fight_or_Die.Configs;
 using Fight_or_Die.GeometryElements;
 using Fight_or_Die.Model.MapModel;
 using Fight_or_Die.Model.PlateModel;
@@ -12,7 +13,7 @@ public class MapView : AbstractView
         _map = map;
     }
 
-    private readonly IEnumerable<Plate> _map;
+    private readonly IEnumerable<IPlaced> _map;
     private readonly char _texture = '\u2588';
 
 
@@ -32,14 +33,14 @@ public class MapView : AbstractView
 
         Vector position = new Vector(0, _consoleConfig.Height - _consoleConfig.OutLineThick);
         Fill(position, verticalConturSize, _texture);
-        
+
         position = new Vector(_consoleConfig.Width - _consoleConfig.OutLineThick, position.Y);
         Fill(position, verticalConturSize, _texture);
-        
+
         position = new Vector(_consoleConfig.OutLineThick, position.Y);
         Fill(position, rowConturSize, _texture);
-        
-        position = new Vector(position.X, _consoleConfig.OutLineThick-_consoleConfig.Displacement);
+
+        position = new Vector(position.X, _consoleConfig.OutLineThick - _consoleConfig.Displacement);
         Fill(position, rowConturSize, _texture);
     }
 

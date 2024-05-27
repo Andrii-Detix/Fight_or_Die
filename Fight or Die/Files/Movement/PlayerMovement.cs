@@ -12,7 +12,7 @@ public class PlayerMovement : IMovement
     {
         _collision = collision;
         _player = player;
-        Direction = Vector.Zero;
+        _direction = Vector.Zero;
         _inJump = false;
         _autoMoving = false;
     }
@@ -21,12 +21,12 @@ public class PlayerMovement : IMovement
     private readonly Collision _collision;
     private bool _inJump;
     private bool _autoMoving;
-    public Vector Direction { get; set; }
+    private Vector _direction;
 
     public void Move()
     {
         RowMoving();
-        if(_inJump)
+        if (_inJump)
             VerticalMoving();
         else
             TryToFall();
@@ -35,17 +35,16 @@ public class PlayerMovement : IMovement
 
     private void RowMoving()
     {
-        
-        Vector rowVector = new Vector(Direction.X, 0);
-        if(!_autoMoving)
-            Direction = new Vector(0, Direction.Y);
+        Vector rowVector = new Vector(_direction.X, 0);
+        if (!_autoMoving)
+            _direction = new Vector(0, _direction.Y);
         Vector nextPosition = _player.Position + rowVector;
 
         if (rowVector.X != 0)
             Thread.Sleep(0);
         if (_collision.OutOfBounds(nextPosition, _player.Size))
             return;
-        
+
         List<IPlaced> intersections = _collision.HasIntersectionWith(nextPosition, _player.Size);
 
         foreach (var obj in intersections)
@@ -59,25 +58,25 @@ public class PlayerMovement : IMovement
 
     private void VerticalMoving()
     {
-        Vector verticalVector = new Vector(0, Direction.Y);
+        Vector verticalVector = new Vector(0, _direction.Y);
         Vector nextPosition = _player.Position + verticalVector;
 
         if (_collision.OutOfBounds(nextPosition, _player.Size))
         {
-            
             if (verticalVector.Y > 0)
             {
-                Direction = new Vector(Direction.X, 0);
+                _direction = new Vector(_direction.X, 0);
                 _inJump = false;
             }
             else
             {
-                Direction = new Vector(Direction.X, -Direction.Y);
+                _direction = new Vector(_direction.X, -_direction.Y);
                 _inJump = false;
             }
+
             return;
         }
-        
+
         List<IPlaced> intersections = _collision.HasIntersectionWith(nextPosition, _player.Size);
 
         IPlaced plate = null;
@@ -87,22 +86,22 @@ public class PlayerMovement : IMovement
             if (obj is Plate)
                 plate = obj;
         }
-    
+
         if (plate != null)
         {
             if (verticalVector.Y < 0)
             {
                 nextPosition = new Vector(nextPosition.X, plate.Position.Y + _player.Size.Height);
-                Direction = new Vector(Direction.X, -Direction.Y);
+                _direction = new Vector(_direction.X, -_direction.Y);
             }
             else
             {
-                Direction = new Vector(Direction.X, 0);
+                _direction = new Vector(_direction.X, 0);
                 nextPosition = _player.Position;
                 _inJump = false;
             }
         }
-    
+
         _player.SetPosition(nextPosition);
     }
 
@@ -110,11 +109,11 @@ public class PlayerMovement : IMovement
     {
         Vector lowerPosition = _player.Position + Vector.Up;
 
-        if (_collision.OutOfBounds(lowerPosition, _player.Size)) 
+        if (_collision.OutOfBounds(lowerPosition, _player.Size))
             return;
 
         List<IPlaced> intersections = _collision.HasIntersectionWith(lowerPosition, _player.Size);
-        
+
         foreach (var obj in intersections)
         {
             if (obj is Plate)
@@ -122,8 +121,8 @@ public class PlayerMovement : IMovement
                 return;
             }
         }
-        
-        Direction += Vector.Up;
+
+        _direction += Vector.Up;
         _inJump = true;
     }
 
@@ -133,27 +132,28 @@ public class PlayerMovement : IMovement
 
         foreach (var obj in intersections)
         {
-            if(obj is Item item)
+            if (obj is Item item)
                 item.Use(_player);
         }
     }
 
     public void Jump()
     {
-        if(_inJump)
+        if (_inJump)
             return;
 
         _inJump = true;
-        Direction += Vector.Down;
+        _direction += Vector.Down;
     }
 
     public void SetRowDirection(Vector direction)
     {
-        bool sameSign = direction.X > 0 && Direction.X > 0 || direction.X < 0 && Direction.X < 0;
+        bool sameSign = direction.X > 0 && _direction.X > 0 || direction.X < 0 && _direction.X < 0;
 
         if (!sameSign)
-            Direction = new Vector(direction.X, Direction.Y);
+            _direction = new Vector(direction.X, _direction.Y);
     }
+
     public void AutoMoving()
     {
         _autoMoving = !_autoMoving;

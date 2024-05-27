@@ -3,7 +3,7 @@
 public abstract class AbstractService : IService
 {
     private bool _isEnable = false;
-    
+
     public void Enable()
     {
         if (_isEnable)
@@ -15,7 +15,7 @@ public abstract class AbstractService : IService
 
     public void Disable()
     {
-        if(!_isEnable)
+        if (!_isEnable)
             return;
 
         _isEnable = false;
