@@ -11,11 +11,12 @@ public abstract class AbstractView : IView
     }
 
     protected ConsoleConfig _consoleConfig;
+
     protected void SetCursor(Vector position)
     {
         Console.SetCursorPosition(position.X, position.Y);
     }
-    
+
     protected void Fill(Vector from, Size size, char texture)
     {
         Vector position = from;
@@ -27,6 +28,7 @@ public abstract class AbstractView : IView
                 Console.Write(texture);
                 position += Vector.Forward;
             }
+
             position += Vector.Down;
             position += size.Width * Vector.Back;
         }
@@ -34,7 +36,7 @@ public abstract class AbstractView : IView
 
     protected void DrawStrings(Vector from, string[] painting)
     {
-        Vector position = new Vector(from.X, from.Y - painting.Length +_consoleConfig.Displacement);
+        Vector position = new Vector(from.X, from.Y - painting.Length + _consoleConfig.Displacement);
 
         foreach (var str in painting)
         {
@@ -43,6 +45,6 @@ public abstract class AbstractView : IView
             position += Vector.Up;
         }
     }
-    
+
     public abstract void Show();
 }
