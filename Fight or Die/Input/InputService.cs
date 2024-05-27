@@ -26,7 +26,7 @@ public class InputService : AbstractService
     private void OnTicked()
     {
         if(Console.KeyAvailable)
-            KeyPressed?.Invoke(Console.ReadKey().Key);
+            KeyPressed?.Invoke(Console.ReadKey(true).Key);
     }
     
 }

@@ -5,7 +5,6 @@ namespace Fight_or_Die.Simulations;
 public abstract class AbstractSimulation<T> : IEnumerable<T>
 {
     protected readonly List<T> _entities = new List<T>();
-
     protected void Add(T entity)
     {
         _entities.Add(entity);
@@ -23,6 +22,7 @@ public abstract class AbstractSimulation<T> : IEnumerable<T>
     IEnumerator IEnumerable.GetEnumerator() => _entities.GetEnumerator();
     
     public abstract void Simulate(T entity);
-    
     protected abstract void Stop(T entity);
+    public abstract void StopAll();
+
 }
