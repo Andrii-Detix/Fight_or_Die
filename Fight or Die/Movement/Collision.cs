@@ -48,6 +48,7 @@ public class Collision
         if (intersections.Contains(target))
             intersections.Remove(target);
         return intersections;
+        
     }
     public List<IPlaced> HasIntersectionWith(Vector position, Size size)
     {
@@ -62,11 +63,15 @@ public class Collision
 
         return intersections;
     }
+
     public bool OutOfBounds(IPlaced target)
     {
-        int posX = target.Position.X;
-        int posY = target.Position.Y;
-        Size size = target.Size;
+        return OutOfBounds(target.Position, target.Size);
+    }
+    public bool OutOfBounds(Vector position, Size size)
+    {
+        int posX =position.X;
+        int posY = position.Y;
         bool rowOut = posX < _consoleConfig.minUserX ||
                       posX + size.Width - _consoleConfig.Displacement > _consoleConfig.maxUserX;
 

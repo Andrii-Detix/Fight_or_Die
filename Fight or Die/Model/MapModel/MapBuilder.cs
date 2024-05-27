@@ -20,7 +20,7 @@ public class MapBuilder
         Size plateSize = new Size(8, 1);
         
         Vector rowDisplacment = new Vector(plateSize.Width * 2, 0);
-        Vector vertDisplacment = new Vector(0, 5);
+        Vector vertDisplacment = new Vector(0, 7);
         
         bool isIndentRow = false;
 
@@ -29,10 +29,10 @@ public class MapBuilder
         while ((position - vertDisplacment).Y >= _config.minUserY)
         {
             position = isIndentRow
-                ? new Vector(plateSize.Width, position.Y)
+                ? new Vector(_config.minUserX+ plateSize.Width, position.Y)
                 : (new Vector(_config.minUserX, position.Y));
             
-            while (position.X + plateSize.Width <= _config.maxUserX)
+            while (position.X + plateSize.Width -_config.Displacement <= _config.maxUserX)
             {
                 plates.Add(new Plate(position, plateSize));
                 position += rowDisplacment;
