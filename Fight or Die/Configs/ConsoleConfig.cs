@@ -8,11 +8,11 @@ public class ConsoleConfig
     {
     minUserX = OutLineThick;
     minUserY = OutLineThick;
-    maxUserX = ConsoleWidth - OutLineThick - Displacement;
-    maxUserY = ConsoleHeight - OutLineThick - Displacement;
+    maxUserX = Width - OutLineThick - Displacement;
+    maxUserY = Height - OutLineThick - Displacement;
     }
-    public readonly int ConsoleWidth = 100;
-    public readonly int ConsoleHeight = 30;
+    public readonly int Width = 107;
+    public readonly int Height = 30;
     public readonly int OutLineThick = 1;
     public readonly int Displacement = 1;
     public readonly int minUserX;

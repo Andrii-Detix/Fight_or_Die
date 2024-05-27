@@ -4,7 +4,7 @@ using Fight_or_Die.Model.HealthModel;
 
 namespace Fight_or_Die.Model.CharacterModel;
 
-public class Character : IDamagable
+public class Character : IDamagable, IPlaced
 {
     public Character(int maxHealth, Size size)
     {
@@ -22,8 +22,8 @@ public class Character : IDamagable
     public event Action<Character>? Died;
     public Health Health { get; }
     public Vector Position { get; private set; }
-    public readonly Size Size;
-    
+    public Size Size { get; }
+     
     public void TakeDamage(int points)
     {
         Health.AddHealth(-points);
