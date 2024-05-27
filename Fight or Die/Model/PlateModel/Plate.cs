@@ -1,8 +1,9 @@
-﻿using Fight_or_Die.GeometryElements;
+﻿using Fight_or_Die.Abstractions;
+using Fight_or_Die.GeometryElements;
 
 namespace Fight_or_Die.Model.PlateModel;
 
-public class Plate
+public class Plate : IPlaced
 {
     public Plate(Vector position, Size size)
     {
@@ -10,6 +11,6 @@ public class Plate
         Size = size;
     }
 
-    public readonly Vector Position;
-    public readonly Size Size;
+    public  Vector Position { get; }
+    public  Size Size { get; }
 }

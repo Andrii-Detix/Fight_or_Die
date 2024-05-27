@@ -24,9 +24,9 @@ public class MapBuilder
         
         bool isIndentRow = false;
 
-        Vector position = new Vector(_config.maxUserY, _config.minUserX);
+        Vector position = new Vector(_config.minUserX, _config.Height - _config.OutLineThick);
         
-        while (position.Y - plateSize.Height >= _config.minUserY)
+        while ((position - vertDisplacment).Y >= _config.minUserY)
         {
             position = isIndentRow
                 ? new Vector(plateSize.Width, position.Y)
