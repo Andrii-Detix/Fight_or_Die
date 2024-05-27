@@ -17,6 +17,17 @@ public class ItemsSimulation : AbstractSimulation<Item>
         Start?.Invoke(item);
     }
 
+    public override void StopAll()
+    {
+        foreach (var entity in _entities)
+        {
+            OnDisable(entity);
+            End?.Invoke(entity);
+        }
+        
+        _entities.Clear();
+    }
+
     protected override void Stop(Item item)
     {
         if(!_entities.Contains(item))
@@ -26,7 +37,7 @@ public class ItemsSimulation : AbstractSimulation<Item>
         Remove(item);
         End?.Invoke(item);
     }
-
+    
     private void OnEnable(Item item)
     {
         item.Destroyed += Stop;
