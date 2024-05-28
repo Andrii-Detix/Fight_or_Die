@@ -14,7 +14,6 @@ public class Character : IDamagable, IHealable, IPlaced
     }
 
     public Health Health { get; }
-
     public Vector Position { get; private set; }
     public Size Size { get; }
 

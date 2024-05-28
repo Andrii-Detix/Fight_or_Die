@@ -12,11 +12,6 @@ public class Item : IPlaced
         Position = Vector.Zero;
     }
 
-    public Item(int healPoints, Size size, Vector position) : this(healPoints, size)
-    {
-        Position = position;
-    }
-
     public event Action<Item>? Destroyed;
     public Vector Position { get; private set; }
     public Size Size { get; }

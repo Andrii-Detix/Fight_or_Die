@@ -17,8 +17,7 @@ public class ItemsView : AbstractView
 
     private readonly List<IPlaced> _items;
     private readonly string[] _texture;
-
-
+    
     public override void Show()
     {
         DrawItems();

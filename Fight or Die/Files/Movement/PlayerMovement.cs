@@ -19,6 +19,7 @@ public class PlayerMovement : IMovement
 
     private readonly Character _player;
     private readonly Collision _collision;
+
     private bool _inJump;
     private bool _autoMoving;
     private Vector _direction;
@@ -31,6 +32,30 @@ public class PlayerMovement : IMovement
         else
             TryToFall();
         IntersectItem();
+    }
+
+    public void Jump()
+    {
+        if (_inJump)
+            return;
+
+        _inJump = true;
+        _direction += Vector.Down;
+    }
+
+    public void GoForward()
+    {
+        _direction = new Vector(Vector.Forward.X, _direction.Y);
+    }
+
+    public void GoBack()
+    {
+        _direction = new Vector(Vector.Back.X, _direction.Y);
+    }
+
+    public void AutoMoving()
+    {
+        _autoMoving = !_autoMoving;
     }
 
     private void RowMoving()
@@ -134,29 +159,5 @@ public class PlayerMovement : IMovement
             if (obj is Item item)
                 item.Use(_player);
         }
-    }
-
-    public void Jump()
-    {
-        if (_inJump)
-            return;
-
-        _inJump = true;
-        _direction += Vector.Down;
-    }
-
-    public void GoForward()
-    {
-        _direction = new Vector(Vector.Forward.X, _direction.Y);
-    }
-
-    public void GoBack()
-    {
-        _direction = new Vector(Vector.Back.X, _direction.Y);
-    }
-
-    public void AutoMoving()
-    {
-        _autoMoving = !_autoMoving;
     }
 }

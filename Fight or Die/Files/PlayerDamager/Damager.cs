@@ -15,7 +15,7 @@ public class Damager
     private readonly DamagerConfig _config;
     private int _damageTimer = 0;
 
-    public void Udpate()
+    public void Update()
     {
         MakeDamage();
     }

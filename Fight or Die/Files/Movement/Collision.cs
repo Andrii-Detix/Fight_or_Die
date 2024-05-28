@@ -20,14 +20,6 @@ public class Collision
             _placedEntities.Add(entity);
     }
 
-    public void Add(List<IPlaced> entities)
-    {
-        foreach (var entity in entities)
-        {
-            Add(entity);
-        }
-    }
-
     public void Remove(IPlaced entity)
     {
         if (_placedEntities.Contains(entity))
@@ -105,7 +97,7 @@ public class Collision
         return InTheMiddle(firstPos, firstEnd, secondPos) || InTheMiddle(firstPos, firstEnd, secondEnd);
     }
 
-    bool InTheMiddle(float from, float to, float middle)
+    private bool InTheMiddle(float from, float to, float middle)
     {
         if (from > to)
             (from, to) = (to, from);

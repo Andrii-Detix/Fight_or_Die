@@ -22,6 +22,6 @@ public abstract class AbstractSimulation<T> : IEnumerable<T>
     }
 
     public abstract void Simulate(T entity);
-    protected abstract void Stop(T entity);
     public abstract void StopAll();
+    protected abstract void Stop(T entity);
 }

@@ -7,9 +7,9 @@ public class Time : ITime, ITimeListener
         _delay = delay;
     }
 
-    public int Frame { get; private set; } = 0;
-
     public event Action? Ticked;
+    
+    public int Frame { get; private set; } = 0;
 
     private readonly int _delay;
 

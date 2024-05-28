@@ -17,7 +17,7 @@ public class GameEndWindow : AbstractView
         DrawGameEnd();
     }
 
-    public void DrawGameEnd()
+    private void DrawGameEnd()
     {
         int x = (_consoleConfig.maxUserX - _losingPhrase.Length) / 2;
         int y = _consoleConfig.maxUserY / 2;

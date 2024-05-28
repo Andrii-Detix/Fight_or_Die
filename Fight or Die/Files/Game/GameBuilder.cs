@@ -201,7 +201,7 @@ public class GameBuilder
 
         _time.Ticked += _playerMovement.Move;
         _time.Ticked += _spawner.Update;
-        _time.Ticked += _damager.Udpate;
+        _time.Ticked += _damager.Update;
 
         _time.Ticked += ViewUpdate;
 
@@ -225,7 +225,7 @@ public class GameBuilder
 
         _time.Ticked -= _playerMovement.Move;
         _time.Ticked -= _spawner.Update;
-        _time.Ticked -= _damager.Udpate;
+        _time.Ticked -= _damager.Update;
 
         _time.Ticked -= ViewUpdate;
 
