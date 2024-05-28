@@ -1,10 +1,10 @@
-﻿using Fight_or_Die.Abstractions;
-using Fight_or_Die.GeometryElements;
-using Fight_or_Die.Model.CharacterModel;
-using Fight_or_Die.Model.Items;
-using Fight_or_Die.Model.PlateModel;
+﻿using Fight_or_Die.Files.Abstractions;
+using Fight_or_Die.Files.GeometryElements;
+using Fight_or_Die.Files.Model.CharacterModel;
+using Fight_or_Die.Files.Model.Items;
+using Fight_or_Die.Files.Model.PlateModel;
 
-namespace Fight_or_Die.Movement;
+namespace Fight_or_Die.Files.Movement;
 
 public class PlayerMovement : IMovement
 {
@@ -19,6 +19,7 @@ public class PlayerMovement : IMovement
 
     private readonly Character _player;
     private readonly Collision _collision;
+
     private bool _inJump;
     private bool _autoMoving;
     private Vector _direction;
@@ -31,6 +32,30 @@ public class PlayerMovement : IMovement
         else
             TryToFall();
         IntersectItem();
+    }
+
+    public void Jump()
+    {
+        if (_inJump)
+            return;
+
+        _inJump = true;
+        _direction += Vector.Down;
+    }
+
+    public void GoForward()
+    {
+        _direction = new Vector(Vector.Forward.X, _direction.Y);
+    }
+
+    public void GoBack()
+    {
+        _direction = new Vector(Vector.Back.X, _direction.Y);
+    }
+
+    public void AutoMoving()
+    {
+        _autoMoving = !_autoMoving;
     }
 
     private void RowMoving()
@@ -71,7 +96,6 @@ public class PlayerMovement : IMovement
             else
             {
                 _direction = new Vector(_direction.X, -_direction.Y);
-                _inJump = false;
             }
 
             return;
@@ -135,27 +159,5 @@ public class PlayerMovement : IMovement
             if (obj is Item item)
                 item.Use(_player);
         }
-    }
-
-    public void Jump()
-    {
-        if (_inJump)
-            return;
-
-        _inJump = true;
-        _direction += Vector.Down;
-    }
-
-    public void SetRowDirection(Vector direction)
-    {
-        bool sameSign = direction.X > 0 && _direction.X > 0 || direction.X < 0 && _direction.X < 0;
-
-        if (!sameSign)
-            _direction = new Vector(direction.X, _direction.Y);
-    }
-
-    public void AutoMoving()
-    {
-        _autoMoving = !_autoMoving;
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace Fight_or_Die.Model.HealthModel;
+﻿namespace Fight_or_Die.Files.Model.HealthModel;
 
 public class Health
 {
@@ -7,13 +7,14 @@ public class Health
         _maxHealth = maxHealth;
         Value = _maxHealth;
     }
-
-    private readonly int _maxHealth;
-    private readonly int _minHealth = 0;
-    public int Value { get; private set; }
-
+    
     public event Action? Died;
     public event Action<int>? HealthChanged;
+    
+    public int Value { get; private set; }
+    
+    private readonly int _maxHealth;
+    private readonly int _minHealth = 0;
 
     public void AddHealth(int points)
     {

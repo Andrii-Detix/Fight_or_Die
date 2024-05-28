@@ -1,4 +1,4 @@
-﻿namespace Fight_or_Die.GeometryElements;
+﻿namespace Fight_or_Die.Files.GeometryElements;
 
 public struct Size
 {

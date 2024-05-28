@@ -1,17 +1,17 @@
-﻿using Fight_or_Die.Configs;
-using Fight_or_Die.Factory;
-using Fight_or_Die.GameTime;
-using Fight_or_Die.GeometryElements;
-using Fight_or_Die.Input;
-using Fight_or_Die.Model.CharacterModel;
-using Fight_or_Die.Model.MapModel;
-using Fight_or_Die.Movement;
-using Fight_or_Die.PlayerDamager;
-using Fight_or_Die.Simulations;
-using Fight_or_Die.Spawner;
-using Fight_or_Die.View;
+﻿using Fight_or_Die.Files.Configs;
+using Fight_or_Die.Files.Factory;
+using Fight_or_Die.Files.GameTime;
+using Fight_or_Die.Files.GeometryElements;
+using Fight_or_Die.Files.Input;
+using Fight_or_Die.Files.Model.CharacterModel;
+using Fight_or_Die.Files.Model.MapModel;
+using Fight_or_Die.Files.Movement;
+using Fight_or_Die.Files.PlayerDamager;
+using Fight_or_Die.Files.Simulations;
+using Fight_or_Die.Files.Spawner;
+using Fight_or_Die.Files.View;
 
-namespace Fight_or_Die.Game;
+namespace Fight_or_Die.Files.Game;
 
 public class GameBuilder
 {
@@ -116,7 +116,7 @@ public class GameBuilder
 
     private void CreatePlayer()
     {
-        Vector startPosition = new Vector(_consoleConfig.minUserX, _consoleConfig.maxUserY);
+        Vector startPosition = new Vector(_consoleConfig.MinUserX, _consoleConfig.MaxUserY);
         _player = _characterFactory.Create();
         _player.SetPosition(startPosition);
     }
@@ -165,8 +165,8 @@ public class GameBuilder
     private void AddInputActions()
     {
         _playerInput.AddAction(ConsoleKey.W, _playerMovement.Jump);
-        _playerInput.AddAction(ConsoleKey.A, () => _playerMovement.SetRowDirection(Vector.Back));
-        _playerInput.AddAction(ConsoleKey.D, () => _playerMovement.SetRowDirection(Vector.Forward));
+        _playerInput.AddAction(ConsoleKey.A, _playerMovement.GoBack);
+        _playerInput.AddAction(ConsoleKey.D, _playerMovement.GoForward);
         _playerInput.AddAction(ConsoleKey.F, _playerMovement.AutoMoving);
     }
 
@@ -201,7 +201,7 @@ public class GameBuilder
 
         _time.Ticked += _playerMovement.Move;
         _time.Ticked += _spawner.Update;
-        _time.Ticked += _damager.Udpate;
+        _time.Ticked += _damager.Update;
 
         _time.Ticked += ViewUpdate;
 
@@ -225,7 +225,7 @@ public class GameBuilder
 
         _time.Ticked -= _playerMovement.Move;
         _time.Ticked -= _spawner.Update;
-        _time.Ticked -= _damager.Udpate;
+        _time.Ticked -= _damager.Update;
 
         _time.Ticked -= ViewUpdate;
 

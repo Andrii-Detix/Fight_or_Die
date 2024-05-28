@@ -1,4 +1,4 @@
-﻿namespace Fight_or_Die.GameTime;
+﻿namespace Fight_or_Die.Files.GameTime;
 
 public class Time : ITime, ITimeListener
 {
@@ -7,9 +7,9 @@ public class Time : ITime, ITimeListener
         _delay = delay;
     }
 
-    public int Frame { get; private set; } = 0;
-
     public event Action? Ticked;
+    
+    public int Frame { get; private set; } = 0;
 
     private readonly int _delay;
 

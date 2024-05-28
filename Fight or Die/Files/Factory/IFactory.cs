@@ -1,4 +1,4 @@
-﻿namespace Fight_or_Die.Factory;
+﻿namespace Fight_or_Die.Files.Factory;
 
 public interface IFactory<T>
 {

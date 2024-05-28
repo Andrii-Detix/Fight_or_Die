@@ -1,44 +1,45 @@
-﻿using Fight_or_Die.Configs;
-using Fight_or_Die.GeometryElements;
-using Fight_or_Die.Model.PlateModel;
+﻿using Fight_or_Die.Files.Configs;
+using Fight_or_Die.Files.GeometryElements;
+using Fight_or_Die.Files.Model.PlateModel;
 
-namespace Fight_or_Die.Model.MapModel;
+namespace Fight_or_Die.Files.Model.MapModel;
 
 public class MapBuilder
 {
     public MapBuilder(ConsoleConfig config)
     {
         _config = config;
+        _plateSize = new Size(8, 1);
+        _rowDisplacement = new Vector(_plateSize.Width * 2, 0);
+        _vertDisplacement = new Vector(0, 7);
     }
 
     private readonly ConsoleConfig _config;
+    private readonly Size _plateSize;
+    private readonly Vector _rowDisplacement;
+    private readonly Vector _vertDisplacement;
 
     public Map Create()
     {
         List<Plate> plates = new List<Plate>();
 
-        Size plateSize = new Size(8, 1);
-
-        Vector rowDisplacment = new Vector(plateSize.Width * 2, 0);
-        Vector vertDisplacment = new Vector(0, 7);
-
         bool isIndentRow = false;
 
-        Vector position = new Vector(_config.minUserX, _config.Height - _config.OutLineThick);
+        Vector position = new Vector(_config.MinUserX, _config.Height - _config.OutLineThick);
 
-        while ((position - vertDisplacment).Y >= _config.minUserY)
+        while ((position - _vertDisplacement).Y >= _config.MinUserY)
         {
             position = isIndentRow
-                ? new Vector(_config.minUserX + plateSize.Width, position.Y)
-                : (new Vector(_config.minUserX, position.Y));
+                ? new Vector(_config.MinUserX + _plateSize.Width, position.Y)
+                : (new Vector(_config.MinUserX, position.Y));
 
-            while (position.X + plateSize.Width - _config.Displacement <= _config.maxUserX)
+            while (position.X + _plateSize.Width - _config.Displacement <= _config.MaxUserX)
             {
-                plates.Add(new Plate(position, plateSize));
-                position += rowDisplacment;
+                plates.Add(new Plate(position, _plateSize));
+                position += _rowDisplacement;
             }
 
-            position -= vertDisplacment;
+            position -= _vertDisplacement;
             isIndentRow = !isIndentRow;
         }
 

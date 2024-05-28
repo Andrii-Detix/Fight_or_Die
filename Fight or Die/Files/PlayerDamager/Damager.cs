@@ -1,8 +1,7 @@
-﻿using Fight_or_Die.Abstractions;
-using Fight_or_Die.Configs;
-using Fight_or_Die.Model.CharacterModel;
+﻿using Fight_or_Die.Files.Abstractions;
+using Fight_or_Die.Files.Configs;
 
-namespace Fight_or_Die.PlayerDamager;
+namespace Fight_or_Die.Files.PlayerDamager;
 
 public class Damager
 {
@@ -16,7 +15,7 @@ public class Damager
     private readonly DamagerConfig _config;
     private int _damageTimer = 0;
 
-    public void Udpate()
+    public void Update()
     {
         MakeDamage();
     }

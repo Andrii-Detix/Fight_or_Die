@@ -1,6 +1,6 @@
-﻿using Fight_or_Die.GameTime;
+﻿using Fight_or_Die.Files.GameTime;
 
-namespace Fight_or_Die.Input;
+namespace Fight_or_Die.Files.Input;
 
 public class InputService : AbstractService
 {

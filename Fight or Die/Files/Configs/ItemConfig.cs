@@ -1,6 +1,6 @@
-﻿using Fight_or_Die.GeometryElements;
+﻿using Fight_or_Die.Files.GeometryElements;
 
-namespace Fight_or_Die.Configs;
+namespace Fight_or_Die.Files.Configs;
 
 public class ItemConfig
 {

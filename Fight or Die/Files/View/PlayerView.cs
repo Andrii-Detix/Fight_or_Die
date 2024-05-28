@@ -1,8 +1,8 @@
-﻿using Fight_or_Die.Abstractions;
-using Fight_or_Die.Configs;
-using Fight_or_Die.GeometryElements;
+﻿using Fight_or_Die.Files.Abstractions;
+using Fight_or_Die.Files.Configs;
+using Fight_or_Die.Files.GeometryElements;
 
-namespace Fight_or_Die.View;
+namespace Fight_or_Die.Files.View;
 
 public class PlayerView : AbstractView
 {
@@ -41,7 +41,7 @@ public class PlayerView : AbstractView
 
     private void DrawHealth()
     {
-        Vector position = new Vector(_consoleConfig.minUserX, _consoleConfig.minUserY);
+        Vector position = new Vector(_consoleConfig.MinUserX, _consoleConfig.MinUserY);
         SetCursor(position);
         Console.WriteLine($"Health: {_health}");
     }

@@ -1,10 +1,9 @@
-﻿using Fight_or_Die.Abstractions;
-using Fight_or_Die.Configs;
-using Fight_or_Die.GeometryElements;
-using Fight_or_Die.Model.MapModel;
-using Fight_or_Die.Model.PlateModel;
+﻿using Fight_or_Die.Files.Abstractions;
+using Fight_or_Die.Files.Configs;
+using Fight_or_Die.Files.GeometryElements;
+using Fight_or_Die.Files.Model.PlateModel;
 
-namespace Fight_or_Die.View;
+namespace Fight_or_Die.Files.View;
 
 public class MapView : AbstractView
 {
@@ -15,33 +14,32 @@ public class MapView : AbstractView
 
     private readonly IEnumerable<IPlaced> _map;
     private readonly char _texture = '\u2588';
-
-
+    
     public override void Show()
     {
-        DrawConturs();
+        DrawContours();
         DrawPlates();
     }
 
-    private void DrawConturs()
+    private void DrawContours()
     {
-        Size verticalConturSize = new Size(_consoleConfig.OutLineThick,
+        Size verticalContourSize = new Size(_consoleConfig.OutLineThick,
             _consoleConfig.Height);
 
-        Size rowConturSize = new Size(_consoleConfig.Width - 2 * _consoleConfig.OutLineThick,
+        Size rowContourSize = new Size(_consoleConfig.Width - 2 * _consoleConfig.OutLineThick,
             _consoleConfig.OutLineThick);
 
         Vector position = new Vector(0, _consoleConfig.Height - _consoleConfig.OutLineThick);
-        Fill(position, verticalConturSize, _texture);
+        Fill(position, verticalContourSize, _texture);
 
         position = new Vector(_consoleConfig.Width - _consoleConfig.OutLineThick, position.Y);
-        Fill(position, verticalConturSize, _texture);
+        Fill(position, verticalContourSize, _texture);
 
         position = new Vector(_consoleConfig.OutLineThick, position.Y);
-        Fill(position, rowConturSize, _texture);
+        Fill(position, rowContourSize, _texture);
 
         position = new Vector(position.X, _consoleConfig.OutLineThick - _consoleConfig.Displacement);
-        Fill(position, rowConturSize, _texture);
+        Fill(position, rowContourSize, _texture);
     }
 
     private void DrawPlates()

@@ -1,6 +1,6 @@
-﻿using Fight_or_Die.Model.HealthModel;
+﻿using Fight_or_Die.Files.Model.HealthModel;
 
-namespace Fight_or_Die.Abstractions;
+namespace Fight_or_Die.Files.Abstractions;
 
 public interface IDamagable
 {

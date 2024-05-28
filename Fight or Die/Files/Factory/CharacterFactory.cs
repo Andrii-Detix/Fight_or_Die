@@ -1,7 +1,7 @@
-﻿using Fight_or_Die.Configs;
-using Fight_or_Die.Model.CharacterModel;
+﻿using Fight_or_Die.Files.Configs;
+using Fight_or_Die.Files.Model.CharacterModel;
 
-namespace Fight_or_Die.Factory;
+namespace Fight_or_Die.Files.Factory;
 
 public class CharacterFactory : IFactory<Character>
 {
@@ -14,6 +14,6 @@ public class CharacterFactory : IFactory<Character>
 
     public Character Create()
     {
-        return new Character(_config.MaxHalth, _config.Size);
+        return new Character(_config.MaxHealth, _config.Size);
     }
 }

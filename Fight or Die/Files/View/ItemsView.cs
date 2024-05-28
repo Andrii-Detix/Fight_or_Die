@@ -1,8 +1,7 @@
-﻿using Fight_or_Die.Abstractions;
-using Fight_or_Die.Configs;
-using Fight_or_Die.Model.Items;
+﻿using Fight_or_Die.Files.Abstractions;
+using Fight_or_Die.Files.Configs;
 
-namespace Fight_or_Die.View;
+namespace Fight_or_Die.Files.View;
 
 public class ItemsView : AbstractView
 {
@@ -18,8 +17,7 @@ public class ItemsView : AbstractView
 
     private readonly List<IPlaced> _items;
     private readonly string[] _texture;
-
-
+    
     public override void Show()
     {
         DrawItems();

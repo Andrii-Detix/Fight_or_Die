@@ -1,7 +1,7 @@
 ﻿using System.Collections;
-using Fight_or_Die.Model.PlateModel;
+using Fight_or_Die.Files.Model.PlateModel;
 
-namespace Fight_or_Die.Model.MapModel;
+namespace Fight_or_Die.Files.Model.MapModel;
 
 public class Map : IEnumerable<Plate>
 {

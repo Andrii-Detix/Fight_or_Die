@@ -1,8 +1,8 @@
-﻿using Fight_or_Die.Abstractions;
-using Fight_or_Die.GeometryElements;
-using Fight_or_Die.Model.HealthModel;
+﻿using Fight_or_Die.Files.Abstractions;
+using Fight_or_Die.Files.GeometryElements;
+using Fight_or_Die.Files.Model.HealthModel;
 
-namespace Fight_or_Die.Model.CharacterModel;
+namespace Fight_or_Die.Files.Model.CharacterModel;
 
 public class Character : IDamagable, IHealable, IPlaced
 {
@@ -13,14 +13,7 @@ public class Character : IDamagable, IHealable, IPlaced
         Position = Vector.Zero;
     }
 
-    public Character(int maxHealth, Size size, Vector position) : this(maxHealth, size)
-    {
-        Position = position;
-    }
-
-
     public Health Health { get; }
-
     public Vector Position { get; private set; }
     public Size Size { get; }
 
