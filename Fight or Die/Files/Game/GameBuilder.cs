@@ -1,17 +1,17 @@
 ﻿using Fight_or_Die.Configs;
-using Fight_or_Die.Factory;
-using Fight_or_Die.GameTime;
-using Fight_or_Die.GeometryElements;
-using Fight_or_Die.Input;
-using Fight_or_Die.Model.CharacterModel;
-using Fight_or_Die.Model.MapModel;
-using Fight_or_Die.Movement;
-using Fight_or_Die.PlayerDamager;
-using Fight_or_Die.Simulations;
-using Fight_or_Die.Spawner;
-using Fight_or_Die.View;
+using Fight_or_Die.Files.Factory;
+using Fight_or_Die.Files.GameTime;
+using Fight_or_Die.Files.GeometryElements;
+using Fight_or_Die.Files.Input;
+using Fight_or_Die.Files.Model.CharacterModel;
+using Fight_or_Die.Files.Model.MapModel;
+using Fight_or_Die.Files.Movement;
+using Fight_or_Die.Files.PlayerDamager;
+using Fight_or_Die.Files.Simulations;
+using Fight_or_Die.Files.Spawner;
+using Fight_or_Die.Files.View;
 
-namespace Fight_or_Die.Game;
+namespace Fight_or_Die.Files.Game;
 
 public class GameBuilder
 {

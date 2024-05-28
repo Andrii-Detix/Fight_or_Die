@@ -1,4 +1,4 @@
-﻿namespace Fight_or_Die.Input;
+﻿namespace Fight_or_Die.Files.Input;
 
 public interface IService
 {

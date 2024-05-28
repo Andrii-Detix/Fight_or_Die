@@ -1,8 +1,8 @@
 ﻿using Fight_or_Die.Configs;
-using Fight_or_Die.GeometryElements;
-using Fight_or_Die.Model.PlateModel;
+using Fight_or_Die.Files.GeometryElements;
+using Fight_or_Die.Files.Model.PlateModel;
 
-namespace Fight_or_Die.Model.MapModel;
+namespace Fight_or_Die.Files.Model.MapModel;
 
 public class MapBuilder
 {

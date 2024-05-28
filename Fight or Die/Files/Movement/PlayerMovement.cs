@@ -1,10 +1,10 @@
-﻿using Fight_or_Die.Abstractions;
-using Fight_or_Die.GeometryElements;
-using Fight_or_Die.Model.CharacterModel;
-using Fight_or_Die.Model.Items;
-using Fight_or_Die.Model.PlateModel;
+﻿using Fight_or_Die.Files.Abstractions;
+using Fight_or_Die.Files.GeometryElements;
+using Fight_or_Die.Files.Model.CharacterModel;
+using Fight_or_Die.Files.Model.Items;
+using Fight_or_Die.Files.Model.PlateModel;
 
-namespace Fight_or_Die.Movement;
+namespace Fight_or_Die.Files.Movement;
 
 public class PlayerMovement : IMovement
 {

@@ -1,11 +1,11 @@
 ﻿using Fight_or_Die.Configs;
-using Fight_or_Die.Factory;
-using Fight_or_Die.GeometryElements;
-using Fight_or_Die.Model.Items;
-using Fight_or_Die.Model.MapModel;
-using Fight_or_Die.Simulations;
+using Fight_or_Die.Files.Factory;
+using Fight_or_Die.Files.GeometryElements;
+using Fight_or_Die.Files.Model.Items;
+using Fight_or_Die.Files.Model.MapModel;
+using Fight_or_Die.Files.Simulations;
 
-namespace Fight_or_Die.Spawner;
+namespace Fight_or_Die.Files.Spawner;
 
 public class ItemSpawner
 {

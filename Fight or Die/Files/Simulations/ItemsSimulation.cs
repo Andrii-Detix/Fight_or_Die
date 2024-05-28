@@ -1,7 +1,6 @@
-﻿using Fight_or_Die.Model.CharacterModel;
-using Fight_or_Die.Model.Items;
+﻿using Fight_or_Die.Files.Model.Items;
 
-namespace Fight_or_Die.Simulations;
+namespace Fight_or_Die.Files.Simulations;
 
 public class ItemsSimulation : AbstractSimulation<Item>
 {

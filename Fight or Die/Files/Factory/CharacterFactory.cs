@@ -1,7 +1,7 @@
 ﻿using Fight_or_Die.Configs;
-using Fight_or_Die.Model.CharacterModel;
+using Fight_or_Die.Files.Model.CharacterModel;
 
-namespace Fight_or_Die.Factory;
+namespace Fight_or_Die.Files.Factory;
 
 public class CharacterFactory : IFactory<Character>
 {

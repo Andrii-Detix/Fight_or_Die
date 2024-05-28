@@ -1,10 +1,9 @@
-﻿using Fight_or_Die.Abstractions;
-using Fight_or_Die.Configs;
-using Fight_or_Die.GeometryElements;
-using Fight_or_Die.Model.MapModel;
-using Fight_or_Die.Model.PlateModel;
+﻿using Fight_or_Die.Configs;
+using Fight_or_Die.Files.Abstractions;
+using Fight_or_Die.Files.GeometryElements;
+using Fight_or_Die.Files.Model.PlateModel;
 
-namespace Fight_or_Die.View;
+namespace Fight_or_Die.Files.View;
 
 public class MapView : AbstractView
 {

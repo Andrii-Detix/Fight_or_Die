@@ -1,8 +1,7 @@
-﻿using Fight_or_Die.Abstractions;
-using Fight_or_Die.Configs;
-using Fight_or_Die.Model.Items;
+﻿using Fight_or_Die.Configs;
+using Fight_or_Die.Files.Abstractions;
 
-namespace Fight_or_Die.View;
+namespace Fight_or_Die.Files.View;
 
 public class ItemsView : AbstractView
 {

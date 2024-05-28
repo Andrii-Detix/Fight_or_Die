@@ -1,8 +1,7 @@
 ﻿using Fight_or_Die.Configs;
-using Fight_or_Die.GeometryElements;
-using Fight_or_Die.Model.Items;
+using Fight_or_Die.Files.Model.Items;
 
-namespace Fight_or_Die.Factory;
+namespace Fight_or_Die.Files.Factory;
 
 public class ItemFactory : IFactory<Item>
 {

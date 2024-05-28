@@ -16,10 +16,10 @@ public class ConsoleConfig
         maxUserY = Height - OutLineThick - Displacement;
     }
 
-    public readonly int Width = 107;
-    public readonly int Height = 30;
-    public readonly int OutLineThick = 1;
-    public readonly int Displacement = 1;
+    public readonly int Width;
+    public readonly int Height;
+    public readonly int OutLineThick;
+    public readonly int Displacement;
     public readonly int minUserX;
     public readonly int minUserY;
     public readonly int maxUserX;

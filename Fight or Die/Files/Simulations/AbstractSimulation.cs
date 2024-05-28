@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 
-namespace Fight_or_Die.Simulations;
+namespace Fight_or_Die.Files.Simulations;
 
 public abstract class AbstractSimulation<T> : IEnumerable<T>
 {

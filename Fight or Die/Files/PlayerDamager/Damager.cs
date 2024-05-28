@@ -1,8 +1,7 @@
-﻿using Fight_or_Die.Abstractions;
-using Fight_or_Die.Configs;
-using Fight_or_Die.Model.CharacterModel;
+﻿using Fight_or_Die.Configs;
+using Fight_or_Die.Files.Abstractions;
 
-namespace Fight_or_Die.PlayerDamager;
+namespace Fight_or_Die.Files.PlayerDamager;
 
 public class Damager
 {
