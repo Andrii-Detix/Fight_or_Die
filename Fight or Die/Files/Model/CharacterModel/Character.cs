@@ -13,12 +13,6 @@ public class Character : IDamagable, IHealable, IPlaced
         Position = Vector.Zero;
     }
 
-    public Character(int maxHealth, Size size, Vector position) : this(maxHealth, size)
-    {
-        Position = position;
-    }
-
-
     public Health Health { get; }
 
     public Vector Position { get; private set; }

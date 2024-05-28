@@ -1,5 +1,5 @@
-﻿using Fight_or_Die.Configs;
-using Fight_or_Die.Files.Abstractions;
+﻿using Fight_or_Die.Files.Abstractions;
+using Fight_or_Die.Files.Configs;
 using Fight_or_Die.Files.GeometryElements;
 
 namespace Fight_or_Die.Files.Movement;
@@ -16,7 +16,7 @@ public class Collision
 
     public void Add(IPlaced entity)
     {
-        if(!_placedEntities.Contains(entity))
+        if (!_placedEntities.Contains(entity))
             _placedEntities.Add(entity);
     }
 
@@ -48,8 +48,8 @@ public class Collision
         if (intersections.Contains(target))
             intersections.Remove(target);
         return intersections;
-        
     }
+
     public List<IPlaced> HasIntersectionWith(Vector position, Size size)
     {
         List<IPlaced> intersections = new List<IPlaced>();
@@ -57,7 +57,7 @@ public class Collision
         foreach (var placedEntity in _placedEntities)
         {
             bool intersect = Intersection(position, size, placedEntity.Position, placedEntity.Size);
-            if(intersect)
+            if (intersect)
                 intersections.Add(placedEntity);
         }
 
@@ -68,9 +68,10 @@ public class Collision
     {
         return OutOfBounds(target.Position, target.Size);
     }
+
     public bool OutOfBounds(Vector position, Size size)
     {
-        int posX =position.X;
+        int posX = position.X;
         int posY = position.Y;
         bool rowOut = posX < _consoleConfig.minUserX ||
                       posX + size.Width - _consoleConfig.Displacement > _consoleConfig.maxUserX;
@@ -80,7 +81,7 @@ public class Collision
 
         return rowOut || vertOut;
     }
-    
+
     private bool Intersection(Vector firstObjPos, Size firstObjSize, Vector secondObjPos, Size secondObjSize)
     {
         int firstObjLastY = firstObjPos.Y - firstObjSize.Height + _consoleConfig.Displacement;
@@ -100,6 +101,7 @@ public class Collision
 
         float firstEnd = firstPos + firstWidth - _consoleConfig.Displacement;
         float secondEnd = secondPos + secondWidth - _consoleConfig.Displacement;
+        
         return InTheMiddle(firstPos, firstEnd, secondPos) || InTheMiddle(firstPos, firstEnd, secondEnd);
     }
 
@@ -107,7 +109,7 @@ public class Collision
     {
         if (from > to)
             (from, to) = (to, from);
-        
+
         return middle >= from && middle <= to;
     }
 }

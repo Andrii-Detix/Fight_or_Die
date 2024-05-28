@@ -1,5 +1,5 @@
-﻿using Fight_or_Die.Configs;
-using Fight_or_Die.Files.Abstractions;
+﻿using Fight_or_Die.Files.Abstractions;
+using Fight_or_Die.Files.Configs;
 
 namespace Fight_or_Die.Files.View;
 

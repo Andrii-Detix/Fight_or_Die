@@ -8,8 +8,8 @@ public struct Vector
         Y = y;
     }
 
-    public int X { get; private set; }
-    public int Y { get; private set; }
+    public int X { get; }
+    public int Y { get; }
 
     public static Vector operator +(Vector a, Vector b) => new Vector(a.X + b.X, a.Y + b.Y);
     public static Vector operator -(Vector a, Vector b) => new Vector(a.X - b.X, a.Y - b.Y);

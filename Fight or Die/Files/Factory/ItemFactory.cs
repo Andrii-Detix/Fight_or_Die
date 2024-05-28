@@ -1,4 +1,4 @@
-﻿using Fight_or_Die.Configs;
+﻿using Fight_or_Die.Files.Configs;
 using Fight_or_Die.Files.Model.Items;
 
 namespace Fight_or_Die.Files.Factory;

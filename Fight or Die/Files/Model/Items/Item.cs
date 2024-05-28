@@ -7,7 +7,7 @@ public class Item : IPlaced
 {
     public Item(int healPoints, Size size)
     {
-        HealPoints = healPoints;
+        _healPoints = healPoints;
         Size = size;
         Position = Vector.Zero;
     }
@@ -20,7 +20,8 @@ public class Item : IPlaced
     public event Action<Item>? Destroyed;
     public Vector Position { get; private set; }
     public Size Size { get; }
-    public readonly int HealPoints;
+
+    private readonly int _healPoints;
 
     public void SetPosition(Vector position)
     {
@@ -29,7 +30,7 @@ public class Item : IPlaced
 
     public void Use(IHealable target)
     {
-        target.Heal(HealPoints);
+        target.Heal(_healPoints);
         Destroyed?.Invoke(this);
     }
 }

@@ -71,7 +71,6 @@ public class PlayerMovement : IMovement
             else
             {
                 _direction = new Vector(_direction.X, -_direction.Y);
-                _inJump = false;
             }
 
             return;
@@ -146,12 +145,14 @@ public class PlayerMovement : IMovement
         _direction += Vector.Down;
     }
 
-    public void SetRowDirection(Vector direction)
+    public void GoForward()
     {
-        bool sameSign = direction.X > 0 && _direction.X > 0 || direction.X < 0 && _direction.X < 0;
+        _direction = new Vector(Vector.Forward.X, _direction.Y);
+    }
 
-        if (!sameSign)
-            _direction = new Vector(direction.X, _direction.Y);
+    public void GoBack()
+    {
+        _direction = new Vector(Vector.Back.X, _direction.Y);
     }
 
     public void AutoMoving()

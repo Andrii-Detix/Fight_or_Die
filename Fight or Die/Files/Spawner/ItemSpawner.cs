@@ -1,4 +1,4 @@
-﻿using Fight_or_Die.Configs;
+﻿using Fight_or_Die.Files.Configs;
 using Fight_or_Die.Files.Factory;
 using Fight_or_Die.Files.GeometryElements;
 using Fight_or_Die.Files.Model.Items;
@@ -25,12 +25,14 @@ public class ItemSpawner
     private readonly Random _random = new Random();
     private int _spawnTimer = 0;
 
-    private bool _canSpawn =>
-        (_items.Count < _spawnerConfig.MaxItemsCount) && (_spawnTimer >= _spawnerConfig.SpawnInterval);
-
+    public void Update()
+    {
+        Spawn();
+    }
+    
     private void Spawn()
     {
-        if (_canSpawn)
+        if (CanSpawn())
         {
             int plateNumber = _random.Next(_map.Count);
             Vector displacement = Vector.Down;
@@ -47,8 +49,9 @@ public class ItemSpawner
         _spawnTimer++;
     }
 
-    public void Update()
+    private bool CanSpawn()
     {
-        Spawn();
+        return (_items.Count < _spawnerConfig.MaxItemsCount) && (_spawnTimer >= _spawnerConfig.SpawnInterval);
     }
+    
 }

@@ -1,5 +1,5 @@
-﻿using Fight_or_Die.Configs;
-using Fight_or_Die.Files.Abstractions;
+﻿using Fight_or_Die.Files.Abstractions;
+using Fight_or_Die.Files.Configs;
 using Fight_or_Die.Files.GeometryElements;
 using Fight_or_Die.Files.Model.PlateModel;
 
@@ -14,8 +14,7 @@ public class MapView : AbstractView
 
     private readonly IEnumerable<IPlaced> _map;
     private readonly char _texture = '\u2588';
-
-
+    
     public override void Show()
     {
         DrawConturs();

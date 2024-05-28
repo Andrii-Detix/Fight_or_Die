@@ -1,4 +1,4 @@
-﻿using Fight_or_Die.Configs;
+﻿using Fight_or_Die.Files.Configs;
 using Fight_or_Die.Files.Factory;
 using Fight_or_Die.Files.GameTime;
 using Fight_or_Die.Files.GeometryElements;
@@ -165,8 +165,8 @@ public class GameBuilder
     private void AddInputActions()
     {
         _playerInput.AddAction(ConsoleKey.W, _playerMovement.Jump);
-        _playerInput.AddAction(ConsoleKey.A, () => _playerMovement.SetRowDirection(Vector.Back));
-        _playerInput.AddAction(ConsoleKey.D, () => _playerMovement.SetRowDirection(Vector.Forward));
+        _playerInput.AddAction(ConsoleKey.A, _playerMovement.GoBack);
+        _playerInput.AddAction(ConsoleKey.D, _playerMovement.GoForward);
         _playerInput.AddAction(ConsoleKey.F, _playerMovement.AutoMoving);
     }
 

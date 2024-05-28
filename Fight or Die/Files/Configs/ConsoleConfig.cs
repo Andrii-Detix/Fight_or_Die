@@ -1,6 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-
-namespace Fight_or_Die.Configs;
+﻿namespace Fight_or_Die.Files.Configs;
 
 public class ConsoleConfig
 {
