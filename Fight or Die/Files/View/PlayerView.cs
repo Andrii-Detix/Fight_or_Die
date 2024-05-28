@@ -1,7 +1,6 @@
 ﻿using Fight_or_Die.Abstractions;
 using Fight_or_Die.Configs;
 using Fight_or_Die.GeometryElements;
-using Fight_or_Die.Model.CharacterModel;
 
 namespace Fight_or_Die.View;
 
