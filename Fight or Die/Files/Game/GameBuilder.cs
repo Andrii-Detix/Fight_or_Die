@@ -116,7 +116,7 @@ public class GameBuilder
 
     private void CreatePlayer()
     {
-        Vector startPosition = new Vector(_consoleConfig.minUserX, _consoleConfig.maxUserY);
+        Vector startPosition = new Vector(_consoleConfig.MinUserX, _consoleConfig.MaxUserY);
         _player = _characterFactory.Create();
         _player.SetPosition(startPosition);
     }

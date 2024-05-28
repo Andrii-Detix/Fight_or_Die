@@ -41,7 +41,7 @@ public class PlayerView : AbstractView
 
     private void DrawHealth()
     {
-        Vector position = new Vector(_consoleConfig.minUserX, _consoleConfig.minUserY);
+        Vector position = new Vector(_consoleConfig.MinUserX, _consoleConfig.MinUserY);
         SetCursor(position);
         Console.WriteLine($"Health: {_health}");
     }

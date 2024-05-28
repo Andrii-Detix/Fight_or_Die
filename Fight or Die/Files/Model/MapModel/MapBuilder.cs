@@ -25,15 +25,15 @@ public class MapBuilder
 
         bool isIndentRow = false;
 
-        Vector position = new Vector(_config.minUserX, _config.Height - _config.OutLineThick);
+        Vector position = new Vector(_config.MinUserX, _config.Height - _config.OutLineThick);
 
-        while ((position - _vertDisplacement).Y >= _config.minUserY)
+        while ((position - _vertDisplacement).Y >= _config.MinUserY)
         {
             position = isIndentRow
-                ? new Vector(_config.minUserX + _plateSize.Width, position.Y)
-                : (new Vector(_config.minUserX, position.Y));
+                ? new Vector(_config.MinUserX + _plateSize.Width, position.Y)
+                : (new Vector(_config.MinUserX, position.Y));
 
-            while (position.X + _plateSize.Width - _config.Displacement <= _config.maxUserX)
+            while (position.X + _plateSize.Width - _config.Displacement <= _config.MaxUserX)
             {
                 plates.Add(new Plate(position, _plateSize));
                 position += _rowDisplacement;

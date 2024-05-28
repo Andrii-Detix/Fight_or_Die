@@ -65,11 +65,11 @@ public class Collision
     {
         int posX = position.X;
         int posY = position.Y;
-        bool rowOut = posX < _consoleConfig.minUserX ||
-                      posX + size.Width - _consoleConfig.Displacement > _consoleConfig.maxUserX;
+        bool rowOut = posX < _consoleConfig.MinUserX ||
+                      posX + size.Width - _consoleConfig.Displacement > _consoleConfig.MaxUserX;
 
-        bool vertOut = posY > _consoleConfig.maxUserY ||
-                       posY - size.Height + _consoleConfig.Displacement < _consoleConfig.minUserY;
+        bool vertOut = posY > _consoleConfig.MaxUserY ||
+                       posY - size.Height + _consoleConfig.Displacement < _consoleConfig.MinUserY;
 
         return rowOut || vertOut;
     }

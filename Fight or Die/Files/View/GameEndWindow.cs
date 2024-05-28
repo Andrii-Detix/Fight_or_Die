@@ -19,8 +19,8 @@ public class GameEndWindow : AbstractView
 
     private void DrawGameEnd()
     {
-        int x = (_consoleConfig.maxUserX - _losingPhrase.Length) / 2;
-        int y = _consoleConfig.maxUserY / 2;
+        int x = (_consoleConfig.MaxUserX - _losingPhrase.Length) / 2;
+        int y = _consoleConfig.MaxUserY / 2;
         Vector position = new Vector(x, y);
 
         DrawStrings(position, _losingPhrase);
