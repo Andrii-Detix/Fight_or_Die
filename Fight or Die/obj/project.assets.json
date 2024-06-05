@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Programing\\Projects\\C#\\Fight or Die\\Fight or Die\\Fight or Die.csproj",
+      "projectUniqueName": "D:\\Programing\\Projects\\C#\\Fight_or_Die\\Fight or Die\\Fight or Die.csproj",
       "projectName": "Fight or Die",
-      "projectPath": "D:\\Programing\\Projects\\C#\\Fight or Die\\Fight or Die\\Fight or Die.csproj",
+      "projectPath": "D:\\Programing\\Projects\\C#\\Fight_or_Die\\Fight or Die\\Fight or Die.csproj",
       "packagesPath": "C:\\Users\\Andrii\\.nuget\\packages\\",
-      "outputPath": "D:\\Programing\\Projects\\C#\\Fight or Die\\Fight or Die\\obj\\",
+      "outputPath": "D:\\Programing\\Projects\\C#\\Fight_or_Die\\Fight or Die\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Andrii\\AppData\\Roaming\\NuGet\\NuGet.Config",
